@@ -42,8 +42,17 @@ To use this extension,  simply add the following code in your application config
 return [
     //....
     'components' => [
-        'mailer' => [
+       'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
+            'viewPath' => '@common/mail',
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp-relay.gmail.com',
+                'username' => 'giaonhanviec@gmail.com',
+                'password' => '123456',
+                'port' => '587',
+                'encryption' => 'ssl',
+            ],
         ],
     ],
 ];
